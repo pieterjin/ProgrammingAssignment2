@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions creates and manages a special matrix object through defined functions.
 
-## Write a short comment describing this function
+## This function creates an empty matrix and its empty inverse
+## It also defines four functions to manage the matrix and its inverse:
+## - get (gets matrix)
+## - set (sets matrix)
+## - getinverse (gets matrix inverse)
+## - setinverse (sets matrix inverse)
 
 makeCacheMatrix <- function(x = matrix()) {
    m <- NULL
@@ -18,10 +22,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+
+## This function gets the cached inverse of its argument.
+## If there is no cached inverse, the inverse of the argument is calculated
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
